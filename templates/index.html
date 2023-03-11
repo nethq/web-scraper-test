@@ -1,0 +1,34 @@
+<!--Using the optimised.py will pass the following args to this file : a table of 4 columns -->
+<!-- #col1 is the class name
+#col2 is the attribute
+#col3 is the number of elements
+#col4 is the element -->
+<!-- The following code will loop through the table and display the results -->
+<html>
+<head>
+    <title>Web Scraping</title>
+</head>
+<body>
+<h1>Web Scraping</h1>
+<!--Allow for saving to csv-->
+<form action="/save" method="post">
+    <input type="submit" value="Save to CSV">
+</form>
+<table>
+    <tr>
+        <th>Class Name</th>
+        <th>Attribute</th>
+        <th>Number of Elements</th>
+        <th>Element</th>
+    </tr>
+{% for row in table %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
